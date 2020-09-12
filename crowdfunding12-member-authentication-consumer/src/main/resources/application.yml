@@ -1,0 +1,38 @@
+server:
+  port: 8003
+  
+spring:
+  application:
+    name: crowd-auth
+  
+  redis:
+    host: 192.168.3.170
+  session:
+    store-type: redis      
+    
+  #  thymeleaf的相关配置
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+    
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka/
+  instance:
+    prefer-ip-address: true
+    # 配置使用指定IP
+    ip-address: 127.0.0.1
+
+short:
+  message:
+    appcode: 6cb2d40627cf4bdc89e03a0de54b7256  
+    host: http://smsmsgs.market.alicloudapi.com
+    path: /smsmsgs  
+    sign: 1
+    skin: 5
+    
+#ribbon的超时时间
+ribbon:
+  ReadTimeout: 30000
+  ConnectTimeout: 30000     

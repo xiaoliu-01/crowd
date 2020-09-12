@@ -1,0 +1,35 @@
+server:
+  port: 8100
+
+spring:
+  application:
+    name: crowd-project-consumer
+    
+  redis:
+    host: 192.168.3.170
+  session:
+    store-type: redis      
+    
+  #  thymeleaf的相关配置
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+    
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka/
+  instance:
+    prefer-ip-address: true
+    # 配置使用指定IP
+    ip-address: 127.0.0.1 
+    
+
+aliyun:
+  oss:
+    access-key-id:  LTAI4G8tRWbCZPZ82MXxNc38
+    access-key-secret:  QKUeLYfFxvbEtlOOrRkbP0m0TsGw5L
+    bucket-domain: http://crowd-start.oss-cn-shenzhen.aliyuncs.com
+    bucket-name: crowd-start
+    end-point: http://oss-cn-shenzhen.aliyuncs.com
+       

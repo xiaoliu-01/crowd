@@ -1,0 +1,32 @@
+server:
+  port: 8200
+
+spring:
+  application:
+    name: crowd-project-order
+    
+  redis:
+    host: 192.168.3.170
+  session:
+    store-type: redis      
+    
+  #  thymeleaf的相关配置
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+    
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka/
+  instance:
+    prefer-ip-address: true
+    # 配置使用指定IP
+    ip-address: 127.0.0.1 
+    
+#ribbon的超时时间
+ribbon:
+  ReadTimeout: 30000
+  ConnectTimeout: 30000  
+
+       

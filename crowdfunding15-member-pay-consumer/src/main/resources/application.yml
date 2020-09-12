@@ -1,0 +1,42 @@
+server:
+  port: 8300
+
+spring:
+  application:
+    name: crowd-project-pay
+    
+  redis:
+    host: 192.168.3.170
+  session:
+    store-type: redis      
+    
+  #  thymeleaf的相关配置
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+    
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka/
+  instance:
+    prefer-ip-address: true
+    # 配置使用指定IP
+    ip-address: 127.0.0.1 
+    
+#ribbon的超时时间
+ribbon:
+  ReadTimeout: 30000
+  ConnectTimeout: 30000  
+  
+ali:
+  pay:
+    alipay-public-key: MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAoe27IHWUfGp3V/l0jeURt2DVgTbmYSXUcs57JU1MmAuqxwYnPC/6IGaGz963Wys+GO4kxAP1ThJ3bYCWROj9WySWhk9lJFrbenSb+gLezgjC0v+bgIb4DGBIKJDbe30evnY7mOMZmEAHuCbklsDKanNeJPZbUMET/jJkP6Ah3r6Un9GQEWBEDraef3s0wub2lfICTnmNDVPV3jheynP51vlUF8mHG8GAgtFxYadq0xmqoEOgxLgJLr6IEmKx8gARSuU6VWMhxXowG+rkABWiXk7RTRdliErXHTnrXnWx4s/vm0d/SsyBjL6OvdPcqMYHD0VOAHhBNcA5plZEqBA4EQIDAQAB
+    app-id: 2021000116669323
+    charset: utf-8
+    gateway-url: https://openapi.alipaydev.com/gateway.do
+    merchant-private-key: MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCOBGJu7IDpYfblV2jjb0Z69q8kKTZwKKiDPW3edtd4e+htQCsUx+WrkchPD8RneFEdIlD8XdtBpXuUB97A8qIS7JxSvckqkvfHgY66DSLpFZNdjSte3QwqK5V3AREyDYWS+2fO9zMb0r5ovx3GeW0Ql0yZ2EwqJ2soQTkKGItNWLRhk/O9Sp9r4986wVvsOkNQ9gp8eU3gw53DxHfcGifNLdTs8OlL1zLHNZ9/oRmIvT/sUYvzayZqJ8WsjyqJaYus1JHMBhVvz3KJdxzwarcimmtcuwgL0ADwAiQOybLXMRPtr8i7cEO/hatauoKsqn9t2kKk7D3Lo3XC14+hSelJAgMBAAECggEAK1DRCQ4fn49es8K+Xigxcg3Ni5T6Yqk0BJt26FSNEdWRJcldmoAB4Bud4edoOzrqWp194AtsdZBYqeTgny8iGe2LHH2AXvjmlDZC5yJclIUdJnqJUOzQ6gfTFbIAoaiYJiWCGxEwyHq10tL/7OpaRqYvGflr+at+No/2Kssjqdo/f9dUFuAY85RWFyaME9PN0nlouTJd0wbSG8pmyu7mnI1rAMCZAfoEiAPvwkz4wAT3LEMAiQb5UItFVFjkI5dr5G5rlV1Yngjr3iU2W1qRyup4jn2GTazLEcp+cRELccFjKsxwOnHsopyT7tiNr3AuuZO4XjWbiBs6qHuQOLs/pQKBgQDgsGJ58MAsf0C282lu0Fx5chxEcef4uEVhz43JcpUrZIH8ydv9V8VxllFxeQwKqeCu/FK/2A3ZwYRz7JRtkVQoyT03Cy7jmmilPMl+fUezpo4UpVefEXht38cTzwvDh2sdTPc+1jwqyPTkSA6A9vvf+yCIZa3tD8mketFodqiuzwKBgQChzr3HIBQqUAQsx9DIijnmu+j8X7Hp2xD2d8lg5lCzXU+gX3wfuZRKVBD4Cn3qRKSO+Z+7s2CmiC1rV+GHFWrUJMMkP89/c8Q+Ttq4CzVjzNTnX1a/HZKx7wcTorvxc/SRt/8Ny+uiXPE7uhRQMP1yt1pNjff4NxVSca65HKAsZwKBgQCVPxRqgyxjYjOOUqkZ3nVOhimYnUDEyUHs8nzv7ph/NkfRrhPeeErCZGK8yPbirmx8T0Z3//9TQWPFzMPa88m/PczXnyoKLSqNd48v4e+auWtu81T8aBJiiV4nHkRmILFZySICLzPQB6QDbomTyHsOEDVP5Jpe+Tmrc5ldllP9qQKBgQCaVOPkQq+ZMBrbT3bPYDAb6I0v8mJyyHTkcJqOJv9AJTcmowx0AgDz6D0LKI6y3OgMSwHU+SGtlWOk5/x/aKktUScjsw1J5nR+bZ3mPyKcXymOyfumbCGYP4GDdAtJIK1cM6A9W4wToAyjSDfJyQBk44dpQ4kJohhfO3lIrIoF7wKBgF6yz+lvdsionTYP3Kh3BjTXWbMJvuhDuH9wE/kpUnFuJxCv1788G8aGBnWisnLLEtn3WXbHfSamVuLPH7hs7GZ1ivSBIbVxmIuEnyQf9O1Ol8taWPpneFxzQdtt3nubOpbmn0cwkbBQO29G/VsCY9io53UjwZm+xL5t+AJ32rr5
+    notify-url: http://tddwkj.natappfree.cc/pay/notify
+    return-url: http://tddwkj.natappfree.cc/pay/return
+    sign-type: RSA2
+       

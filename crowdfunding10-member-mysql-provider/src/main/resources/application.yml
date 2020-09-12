@@ -1,0 +1,41 @@
+server:
+  port: 8001
+  
+spring:
+  application:
+    name: crowd-mysql  
+  #数据库相关配置  
+  datasource:
+    name: mydb
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://127.0.0.1:3306/project_crowd?characterEncoding=utf8&serverTimezone=UTC
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+   
+   #eureka相关配置 
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka/ 
+   # 优先使用IP地址方式进行注册服务
+  instance:
+    prefer-ip-address: true
+    # 配置使用指定IP
+    ip-address: 127.0.0.1
+   #mybatis相关配置
+mybatis:
+  mapper-locations: classpath*:/mybatis/mapper/*Mapper.xml
+  
+  #日志相关配置
+logging:
+    level:     
+      com.crowd.mapper: debug
+      com.crowd.test: debug
+
+#ribbon的超时时间
+ribbon:
+  ReadTimeout: 30000
+  ConnectTimeout: 30000 
+      
